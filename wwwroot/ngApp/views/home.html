@@ -1,0 +1,24 @@
+<h2>Home</h2>
+<ul>
+        <!--get-->
+    <li ng-repeat="books in controller.BOOK">
+        {{books.title}}|{{books.author}}
+        <!--get-->
+
+        <!--delete-->
+        <input ng-click="controller.deleteBook(books.id)" type="button"  value="Delete"/>
+        <!--delete-->
+
+        <!--edit-update-->
+        <a ui-sref="update({id:books.id})">Edit</a>
+        <!--edit-update-->
+
+    </li>
+</ul>
+        <!--post-->
+<form ng-submit="controller.AddBook(somebook)">
+    <input ng-model="somebook.title" placeholder="Enter Title"/>
+    <input ng-model="somebook.author" placeholder="Enter Author"/>
+    <input type="submit" value="Submit" />
+</form>
+        <!-- post -->
